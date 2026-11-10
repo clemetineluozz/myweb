@@ -159,7 +159,7 @@
 
   if (form) {
     var status = document.getElementById("form-status");
-    var to = "xiaoxiao@example.com";
+    var to = "U202615166@hust.edu.cn";
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
