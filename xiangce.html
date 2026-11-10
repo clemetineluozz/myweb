@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的相册 · 小小的家</title>
+<meta name="description" content="小小的家的相册：我的小猫、我的爱好、我喜爱的明星。点开可以放大查看。">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="小小的家，返回首页">
+      <img class="brand-logo" src="images/logo.jpg" alt="小小的家标志：一座红顶小房子">
+      <span class="brand-text">
+        <strong>小小的家</strong>
+        <small>a quiet corner</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="jianjie.html">个人简介</a>
+      <a href="donghua.html">动画作品</a>
+      <a href="xiangce.html" class="is-active" aria-current="page">我的相册</a>
+      <a href="xuexi.html">学习心得</a>
+      <a href="contact.html" class="nav-cta">写信给我</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">首页</a> / 我的相册</p>
+      <h1>我的相册</h1>
+      <p>三张照片，三个让我停下来的瞬间。点任意一张可以放大，放大后支持左右方向键翻页、Esc 关闭。</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="album">
+
+        <button class="album-item reveal" type="button"
+                data-src="images/mao.jpg"
+                data-caption="我的小猫：睡着的时候爪子还要搭在边上">
+          <img src="images/mao.jpg" alt="一只灰褐色小奶猫趴在毛毯上熟睡，前爪自然垂下" loading="lazy">
+          <span class="album-cap">
+            <strong>我的小猫</strong>
+            <small>摄于某个午后</small>
+          </span>
+        </button>
+
+        <button class="album-item reveal" type="button"
+                data-src="images/qiang.jpg"
+                data-caption="我的爱好：收藏的模型手枪，红色绒布当背景">
+          <img src="images/qiang.jpg" alt="一把金属质感的模型手枪与子弹摆在红色绒布上" loading="lazy">
+          <span class="album-cap">
+            <strong>我的爱好</strong>
+            <small>模型与收藏</small>
+          </span>
+        </button>
+
+        <button class="album-item reveal" type="button"
+                data-src="images/star.jpg"
+                data-caption="我喜爱的明星：《勇敢的心》海报，看哭过一次">
+          <img class="pos-top" src="images/star.jpg" alt="电影《勇敢的心》海报，梅尔·吉布森饰演的华莱士手持长剑" loading="lazy">
+          <span class="album-cap">
+            <strong>我喜爱的明星</strong>
+            <small>《勇敢的心》</small>
+          </span>
+        </button>
+
+      </div>
+
+      <p class="form-hint" style="margin-top:22px">
+        小提示：图片放在 <code>images/</code> 目录里，页面里用相对路径引用（例如 <code>images/mao.jpg</code>）。
+        这样整个文件夹打包上传后，图片不会「集体失踪」。
+      </p>
+
+      <div class="grid grid--2" style="margin-top:52px">
+        <blockquote class="quote reveal">
+          照片的好处是：它不解释，只把当时的温度留在那里。翻到这一页，就想起来拍照那天下午有点困。
+          <cite>—— 写在相册边上</cite>
+        </blockquote>
+
+        <div class="card reveal">
+          <h3>相册是怎么排的</h3>
+          <p>
+            用 CSS Grid 分成三列，每张照片统一用 <code>aspect-ratio</code> 裁成 4:3，
+            悬停时轻微放大；点开后用一小段 JavaScript 把原图放进灯箱。
+            如果没有 JavaScript，照片也照样能看，只是不能放大。
+          </p>
+          <div class="btn-row">
+            <a class="btn btn--ghost btn--small" href="donghua.html">去看动画作品</a>
+            <a class="btn btn--primary btn--small" href="contact.html">写信给我</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>小小的家</strong>
+      <p class="footer-meta">更新时间：2026 年 11 月 · Copyright © <span data-year>2026</span> 小小的家</p>
+    </div>
+    <nav class="footer-links" aria-label="页脚导航">
+      <a href="index.html">首页</a>
+      <a href="jianjie.html">个人简介</a>
+      <a href="donghua.html">动画作品</a>
+      <a href="xiangce.html">我的相册</a>
+      <a href="xuexi.html">学习心得</a>
+      <a href="contact.html">写信给我</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片放大预览" aria-hidden="true">
+  <button class="lb-btn lb-close" type="button" aria-label="关闭预览">✕</button>
+  <figure style="margin:0">
+    <img src="images/mao.jpg" alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button class="lb-btn lb-prev" type="button" aria-label="上一张">‹</button>
+  <button class="lb-btn lb-next" type="button" aria-label="下一张">›</button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

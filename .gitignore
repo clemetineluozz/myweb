@@ -1,0 +1,5 @@
+# 本地验收用的截图与脚本，不随网站发布
+_shots/
+*.zip
+Thumbs.db
+.DS_Store
