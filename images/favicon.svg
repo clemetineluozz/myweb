@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="小小的家">
-  <rect width="64" height="64" rx="14" fill="#FBF6EE"/>
-  <path d="M10 32 32 14l22 18" fill="none" stroke="#C8503F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 32v18h32V32" fill="none" stroke="#C8503F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="28" y="38" width="8" height="12" rx="1.5" fill="#2F6F6B"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="lzx的秘密基地">
+  <rect width="64" height="64" rx="12" fill="#171b1f"/>
+  <path d="M12 32 32 16l20 16" fill="none" stroke="#6fd8bb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 31v17h28V31" fill="none" stroke="#6fd8bb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="28" y="38" width="8" height="10" rx="1.5" fill="#e3a271"/>
 </svg>

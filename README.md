@@ -1,107 +1,68 @@
-# 小小的家 · 个人主页
+# lzx的秘密基地 · 个人主页
 
-《计算机基础》课程作业。一套六个页面、纯手写 HTML + CSS + 原生 JavaScript 的个人网站，
-放到任何一个静态托管上就能打开，也可以直接双击 `index.html` 在本地浏览。
-
-## 页面
-
-| 文件 | 内容 |
-| --- | --- |
-| `index.html` | 首页：自我介绍、三张卡片、通往各分页的入口 |
-| `jianjie.html` | 个人简介：概况、联系方式、能力条、教育经历（含四个锚点跳转） |
-| `donghua.html` | 动画作品：地球自转、气球上浮、光线掠过三段 CSS 动画 |
-| `xiangce.html` | 我的相册：三张照片，点击可放大，支持左右方向键与 Esc |
-| `xuexi.html` | 学习心得：五条踩坑记录、已做到清单、待学清单 |
-| `contact.html` | 写信给我：留言表单（校验后调起邮件客户端）、联系方式、复制邮箱 |
+一个自己一页页排出来的个人小站。深灰黑底、暖白字，薄荷绿做主点缀、
+琥珀橙做次点缀；标题正文统一用无衬线字体，靠字重和字距拉开层次，
+细线分区、大留白。刻意避开了模板化的渐变、玻璃拟态和圆角卡片阴影，
+看起来像一个懂点排版的人慢慢搭出来的，而不是套模板生成的。
 
 ## 目录结构
 
 ```
-MYWEB/
-├─ index.html
-├─ jianjie.html
-├─ donghua.html
-├─ xiangce.html
-├─ xuexi.html
-├─ contact.html
-├─ css/
-│  └─ style.css
-├─ js/
-│  └─ main.js
-└─ images/
-   ├─ favicon.svg
-   ├─ logo.jpg
-   ├─ mao.jpg
-   ├─ qiang.jpg
-   ├─ star.jpg
-   └─ home.gif
+D:\MYWEB\
+├─ index.htm              首页
+├─ web\                   网页文件
+│   ├─ jianjie.htm        关于我（四个锚点）
+│   ├─ xiangce.htm        相册：views 与 tastes 两个板块
+│   ├─ aihao.htm          我的爱好（听音乐 / 画画 / 电子游戏 / 二次元）
+│   ├─ music.htm          我喜欢的音乐（纯封面墙，点图跳转听歌）
+│   └─ contact.htm        给我留言
+├─ images\
+│   ├─ album\             相册图片
+│   │   ├─ views\         风景 / 建筑 / 街拍（9 张）
+│   │   ├─ tastes\        美食（4 张）
+│   │   └─ *-mascot.jpg   两个板块标题旁的表情小图标
+│   ├─ music\             17 张专辑封面 + 5 张「最近在听」封面
+│   ├─ gta6.jpg           GTA6 官方美术图（爱好页用）
+│   └─ *.jpg / *.gif      表情素材与「还在装修」小图
+├─ css\style.css          样式表
+└─ js\main.js             日期、计数、当前页高亮、相册灯箱
 ```
 
-所有页面之间的链接、图片、样式表、脚本全部使用**相对路径**，整个文件夹搬到哪里都不会断。
-图片文件名统一小写——GitHub Pages 跑在 Linux 上，`MAO.jpg` 和 `mao.jpg` 是两个不同的文件。
+根目录还留了 `index.html`、`jianjie.html` 等旧文件，它们只做跳转用，
+免得以前收藏的链接失效。真正的页面是 `.htm` 那批。
 
 ## 本地预览
 
-- 直接双击 `index.html` 即可（因为没有任何构建步骤，也没有跨域请求）。
-- 想更接近线上环境，可以在该目录下开一个静态服务器：
+直接双击 `index.htm` 就能看；或者在这个目录里执行：
 
 ```bash
 python -m http.server 8000
-# 然后浏览器打开 http://localhost:8000
 ```
 
-## 发布到 GitHub Pages
+然后打开 `http://localhost:8000/index.htm`。
 
-1. 在 GitHub 上新建一个仓库，例如 `myweb`，复制仓库地址。
-2. 把整个 `MYWEB` 文件夹里的内容（不是文件夹本身）提交到仓库。
+## 一些说明
 
-   用 SourceTree：克隆仓库到本地工作目录（如 `D:\Work\myweb`）→ 把本文件夹里的文件复制进去 →
-   Add → Commit → Push。
+- 站点原名「小小的家」，现已改名为「lzx的秘密基地」，并去掉了原来的房子 logo，
+  页头改为纯文字排版。导航精简为 6 项，动画作品栏目及其页面已删除。
+- 相册全部换成自己的照片，只分 **views** 和 **tastes** 两个板块，纯图片展示，
+  没有多余说明；两个板块标题各配了一张表情小图标（views 戴帽子的、tastes 吃寿司的）。
+  点任意一张可放大，再点一下或按 Esc 关闭。
+  图片用浏览器 canvas 压过（长边不超过 1500px），加载更快。
+- 页脚有自动日期和本机访问计数，纯装饰，换台电脑会从 1 重新数。
+- 原来的「学习心得」栏目已删掉，换成「我的爱好」：听音乐、画画、玩电子游戏
+  （配了 GTA6 官方美术图）和二次元文化；首页欢迎语也换成了口语化的说法。
+- 卡通表情素材：简介页捂嘴笑、留言页挥手，在 images/ 下的
+  avatar-smile.jpg、avatar-wave.jpg。
+- 「我喜欢的音乐」页取消了按歌手分类，22 张专辑封面平铺成一个 5 列封面墙
+  （含 Magdalena Bay《Imaginal Disk》、Olivia Dean《The Art of Loving》、
+  Florence + The Machine《How Big, How Blue, How Beautiful》、ROSALÍA《LUX》、
+  Taylor Swift《Midnights》等）。点任意一张封面会跳转到网易云音乐对应专辑的
+  搜索页，悬停时出现 ▶ 播放图标；封面在 images/music/，通过 iTunes 公开接口
+  抓取并本地保存，不依赖外链；版权归各唱片公司。
+- 邮箱统一用 `U202615166@hust.edu.cn`，导航、简介页与留言页的 `mailto:` 都是这一个。
 
-   用命令行（在 `D:\MYWEB` 里执行）：
+## 发布
 
-   ```bash
-   git init
-   git add .
-   git commit -m "个人主页：首页 + 五个分页"
-   git branch -M main
-   git remote add origin https://github.com/你的用户名/myweb.git
-   git push -u origin main
-   ```
-
-3. 打开仓库 → Settings → Pages → Source 选 `Deploy from a branch`，Branch 选 `main`、目录选 `/ (root)`，保存。
-4. 等一两分钟，访问 `https://你的用户名.github.io/myweb/`。
-
-> 仓库名如果就叫 `你的用户名.github.io`，那地址是 `https://你的用户名.github.io/`，
-> 根目录直接就是网站首页，不用带子路径。
-
-## 已填入的信息
-
-- 姓名：罗芷欣
-- 学校 / 学院：华中科技大学 计算机科学与技术学院
-- 专业：计算机科学与技术（2026 级本科）
-- 邮箱：`U202615166@hust.edu.cn`（已同步到 `jianjie.html`、`contact.html` 的复制按钮和 `js/main.js` 第 162 行的表单收件地址）
-- 电话：`18771997736`
-
-页面里没有写出生年月、性别、政治面貌和宿舍号——公网上没必要放这些，答辩时老师也不看。
-
-还需要你自己决定的：
-
-- 相册里的三张图（小猫、模型枪、《勇敢的心》海报）来自课程素材，换成自己的照片时同步改 `alt` 和 `data-caption`
-- 「个人能力」五条熟练度是按作业情况估的，觉得不合适就拖动 `<i style="width:85%">` 里的百分比
-- 教育背景里的高中一项只写了「高中 · 理科」，需要写校名就补上
-
-## 技术说明
-
-- 不依赖任何框架、CDN、外部字体，断网也能完整打开。
-- 布局用 Flexbox + Grid；断点 980 / 820 / 560px，手机、平板、桌面各一档。
-- 语义化标签（`header` / `nav` / `main` / `section` / `aside` / `footer`），有跳转到主内容的 skip link。
-- 图片都有 `alt`，次要图片 `loading="lazy"`；键盘焦点用 `:focus-visible` 描边。
-- 系统开启「减少动态效果」时，入场动画与循环动画会自动收敛。
-- 三段动画用 CSS `@keyframes` 实现，替代课程素材里已经无法播放的 `.swf`。
-
-## 验收记录
-
-- 六个页面的相对链接、图片、样式表、脚本全部可解析（脚本检查过所有 `href` / `src`）。
-- 无头浏览器实测：移动端导航开合、相册灯箱打开/翻页/Esc 关闭、表单空值提示与邮箱格式提示均正常，控制台无报错。
-- 1280px 与 390px 两档宽度下均无横向溢出。
+整个 `MYWEB` 文件夹传到任意静态托管即可，不用构建。
+所有 `href` 和 `src` 都是相对路径，移动到别处也不会断图断链。

@@ -3,181 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>学习心得 · 小小的家</title>
-<meta name="description" content="做这个个人主页过程中记下的五条心得：结构、相对路径、Flash 退场、配色与可访问性。">
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css">
+<title>lzx的秘密基地 · 跳转中</title>
+<meta http-equiv="refresh" content="0;url=web/aihao.htm">
+<style>
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: #0f1215; color: #e9eae6;
+    font: 15px/1.8 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px;
+  }
+  p { margin: 0; color: #b7bdb9; }
+  a { color: #6fd8bb; text-decoration: none; border-bottom: 1px solid rgba(111, 216, 187, .45); }
+  a:hover { border-bottom-color: #6fd8bb; }
+  .tip { display: block; margin-top: 10px; font-size: 12px; letter-spacing: .18em; color: #7e8783; text-transform: uppercase; }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">跳到正文</a>
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html" aria-label="小小的家，返回首页">
-      <img class="brand-logo" src="images/logo.jpg" alt="小小的家标志：一座红顶小房子">
-      <span class="brand-text">
-        <strong>小小的家</strong>
-        <small>a quiet corner</small>
-      </span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="site-nav" id="site-nav" aria-label="主导航">
-      <a href="index.html">首页</a>
-      <a href="jianjie.html">个人简介</a>
-      <a href="donghua.html">动画作品</a>
-      <a href="xiangce.html">我的相册</a>
-      <a href="xuexi.html" class="is-active" aria-current="page">学习心得</a>
-      <a href="contact.html" class="nav-cta">写信给我</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="crumb"><a href="index.html">首页</a> / 学习心得</p>
-      <h1>学习心得</h1>
-      <p>从「用表格拼一张网页」到「写一份能放到手机上的页面」，踩过的坑基本都在这里。五条，按踩到的先后顺序排。</p>
-    </div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="wrap">
-      <div class="notes">
-
-        <article class="note reveal">
-          <span class="note-no">01</span>
-          <div>
-            <h2>先把结构写清楚，再谈好看</h2>
-            <p>
-              教程里的做法是用一张 4 行 2 列的表格，靠合并单元格拼出版式。能出效果，但表格是「数据」的语义，
-              拿它当骨架，读屏软件会念成一堆行列，改一个间距还得动整张表。
-              重做时我换成了 <code>header</code>、<code>nav</code>、<code>main</code>、<code>aside</code>、<code>footer</code>，
-              布局交给 Flexbox 和 Grid——结构没变，但改版时只需要动 CSS。
-            </p>
-          </div>
-        </article>
-
-        <article class="note reveal">
-          <span class="note-no">02</span>
-          <div>
-            <h2>相对路径，是「换台电脑就找不到图」的真凶</h2>
-            <p>
-              被这个问题坑过两次。第一次是把 <code>D:\MYWEB\images\logo.jpg</code> 这种绝对路径写进了 <code>src</code>，
-              本机好好的，拷给同学就全变成裂图；第二次是文件名大小写——Windows 不在乎
-              <code>MAO.jpg</code> 和 <code>mao.jpg</code>，GitHub Pages 跑在 Linux 上却很在乎。
-              现在的规矩：只用 <code>images/xxx.jpg</code> 这样的相对路径，文件名一律小写。
-            </p>
-          </div>
-        </article>
-
-        <article class="note reveal">
-          <span class="note-no">03</span>
-          <div>
-            <h2>Flash 退场了，但「做动画」的需求还在</h2>
-            <p>
-              原素材里那些 <code>.swf</code> 现在已经无法播放。与其怀念插件，不如记住它当年解决的问题：
-              让静止的页面动起来、有反馈。这件事现在交给 CSS 的
-              <code>@keyframes</code>、<code>transform</code> 和一点点 JavaScript。
-              我在「动画作品」里把地球、气球、光线重做了一遍，文件小、加载快，手机也能看。
-            </p>
-          </div>
-        </article>
-
-        <article class="note reveal">
-          <span class="note-no">04</span>
-          <div>
-            <h2>颜色少一点，留白多一点</h2>
-            <p>
-              第一版首页用了红、蓝、绿、黄、灰五种颜色，像过年。后来把主色收成一个暖红，
-              配一个墨绿做点缀，其余全部交给米白和灰褐——页面立刻安静下来。
-              同一个道理也适用于字号：先定三个层级（标题、正文、注释），比随手写一堆 <code>font-size</code> 稳得多。
-            </p>
-          </div>
-        </article>
-
-        <article class="note reveal">
-          <span class="note-no">05</span>
-          <div>
-            <h2>给键盘用户、慢网速和晕动症留一条路</h2>
-            <p>
-              好看不该以「别人用不了」为代价。所以：图片都写了 <code>alt</code>，次要图片用 <code>loading="lazy"</code>；
-              焦点用 <code>:focus-visible</code> 描出来，Tab 键走一圈能看到自己在哪；
-              系统开了「减少动态效果」时，动画会自动收敛。这些几乎不花时间，但差别很大。
-            </p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="grid grid--2" style="align-items:start">
-        <div class="card reveal">
-          <h3>这个站里已经做到的事</h3>
-          <ul class="checklist">
-            <li>六个页面，共用同一套导航与页脚</li>
-            <li>全部使用相对路径，整包可移动</li>
-            <li>手机、平板、桌面三档断点</li>
-            <li>语义化标签与跳转链接</li>
-            <li>图片有替代文字，懒加载</li>
-            <li>动画尊重系统设置</li>
-            <li>无 JavaScript 时内容仍可读</li>
-            <li>零外部依赖，断网也能打开</li>
-          </ul>
-        </div>
-
-        <div class="card reveal">
-          <h3>接下来想学的</h3>
-          <p>把「会写页面」变成「会写能维护的页面」，还差这些：</p>
-          <ul class="checklist">
-            <li>CSS 变量与设计令牌的整理</li>
-            <li>用 Grid 做杂志式排版</li>
-            <li>无障碍审计（读屏实测）</li>
-            <li>一点点构建工具与部署流程</li>
-            <li>SVG 手绘与动效</li>
-            <li>把笔记写成能复用的组件</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="wrap">
-      <blockquote class="quote reveal">
-        教程给你的是「怎么做」，练习要回答的是「为什么这么做」。想明白一次，就不用再抄第二遍。
-        <cite>—— 课程结束时的自我总结</cite>
-      </blockquote>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div>
-      <strong>小小的家</strong>
-      <p class="footer-meta">更新时间：2026 年 11 月 · Copyright © <span data-year>2026</span> 小小的家</p>
-    </div>
-    <nav class="footer-links" aria-label="页脚导航">
-      <a href="index.html">首页</a>
-      <a href="jianjie.html">个人简介</a>
-      <a href="donghua.html">动画作品</a>
-      <a href="xiangce.html">我的相册</a>
-      <a href="xuexi.html">学习心得</a>
-      <a href="contact.html">写信给我</a>
-    </nav>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+<p>正在前往「爱好」……<br>没跳过去就点<a href="web/aihao.htm">这里</a>。<span class="tip">lzx&rsquo;s base</span></p>
 </body>
 </html>
