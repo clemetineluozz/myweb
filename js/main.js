@@ -23,10 +23,9 @@ function writeHits() {
 
 // 当前页高亮：对上文件名就给导航加个小橙标
 function markCurrent() {
-  var name = (location.pathname.split('/').pop() || 'index.htm').toLowerCase();
-  if (name === 'index.html') name = 'index.htm';
+  var name = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   var groups = {
-    'index.htm': ['index.htm'],
+    'index.html': ['index.html'],
     'jianjie.htm': ['jianjie.htm'],
     'xiangce.htm': ['xiangce.htm'],
     'aihao.htm': ['aihao.htm'],

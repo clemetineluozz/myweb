@@ -9,7 +9,7 @@
 
 ```
 D:\MYWEB\
-├─ index.htm              首页
+├─ index.html             首页
 ├─ web\                   网页文件
 │   ├─ jianjie.htm        关于我（四个锚点）
 │   ├─ xiangce.htm        相册：views 与 tastes 两个板块
@@ -28,18 +28,19 @@ D:\MYWEB\
 └─ js\main.js             日期、计数、当前页高亮、相册灯箱
 ```
 
-根目录还留了 `index.html`、`jianjie.html` 等旧文件，它们只做跳转用，
-免得以前收藏的链接失效。真正的页面是 `.htm` 那批。
+根目录还留了 `jianjie.html`、`xiangce.html`、`aihao.html`、`xuexi.html`、`contact.html`
+几个旧文件，它们只做跳转用，免得以前收藏的链接失效。真正的页面是 `.htm` 那批，
+首页则按课程要求叫 `index.html`（原来叫 `index.htm`，已改名）。
 
 ## 本地预览
 
-直接双击 `index.htm` 就能看；或者在这个目录里执行：
+直接双击 `index.html` 就能看；或者在这个目录里执行：
 
 ```bash
 python -m http.server 8000
 ```
 
-然后打开 `http://localhost:8000/index.htm`。
+然后打开 `http://localhost:8000/`（默认就会加载 `index.html`）。
 
 ## 一些说明
 
